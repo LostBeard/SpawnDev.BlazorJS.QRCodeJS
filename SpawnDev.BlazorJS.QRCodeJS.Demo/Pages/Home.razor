@@ -1,0 +1,30 @@
+﻿@page "/"
+@inject NavigationManager NavigationManager
+
+<PageTitle>Generate QRCode</PageTitle>
+
+<h1>Generate QRCode</h1>
+<div>
+    <textarea @bind-value=value @bind-value:event="oninput" placeholder="Enter your text" cols="60" /><br />
+    <button class="btn btn-primary" @onclick="Generate">Generate</button>
+</div>
+<div>@qrvalue</div>
+<div><QRCodeImage Text="@qrvalue" /></div>
+
+@code
+{
+    string value = "";
+    string qrvalue = "";
+
+    protected override void OnInitialized()
+    {
+        value = NavigationManager.Uri;
+        qrvalue = value;
+    }
+
+    private void Generate()
+    {
+        qrvalue = value;
+        StateHasChanged();
+    }
+}

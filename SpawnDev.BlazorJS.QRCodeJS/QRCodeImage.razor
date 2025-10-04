@@ -1,0 +1,93 @@
+﻿@using Microsoft.AspNetCore.Components.Routing
+@using QRCodeJS;
+@using static SpawnDev.BlazorJS.QRCodeJS.QRCode
+@implements IDisposable;
+
+<img src="@ImageSource" style="@Style" class="@Class" />
+
+@code {
+    [Inject]
+    NavigationManager NavigationManager { get; set; } = default!;
+
+    [Inject]
+    BlazorJSRuntime JS { get; set; } = default!;
+
+    [Inject]
+    QRCodeJSService QRCodeJSService { get; set; } = default!;
+
+    string ImageSource => QRCodeJSService.CreateDataUrl(new QRCodeOptions
+    {
+        ColorDark = ColorDark,
+        ColorLight = ColorLight,
+        CorrectLevel = CorrectLevel,
+        Height = Height,
+        Width = Width,
+        Text = Text,
+    }, "image/png", TextType);
+    /// <summary>
+    /// QRCode link data
+    /// </summary>
+    [Parameter]
+    public string Text { get; set; } = "";
+    /// <summary>
+    /// Width. Default 256
+    /// </summary>
+    [Parameter]
+    public int? Width { get; set; }
+    /// <summary>
+    /// Height. Default 256
+    /// </summary>
+    [Parameter]
+    public int? Height { get; set; }
+    /// <summary>
+    /// The dark color to use. Default: #000000
+    /// </summary>
+    [Parameter]
+    public string? ColorDark { get; set; }
+    /// <summary>
+    /// The light color to use. Default: #ffffff
+    /// </summary>
+    [Parameter]
+    public string? ColorLight { get; set; }
+    /// <summary>
+    /// CorrectLevel. Default: CorrectLevel.H
+    /// </summary>
+    [Parameter]
+    public CorrectLevel? CorrectLevel { get; set; }
+    /// <summary>
+    /// DataTextType indicates how DataText should be processed before rendering
+    /// </summary>
+    [Parameter]
+    public DataTextType TextType { get; set; } = DataTextType.Text;
+    /// <summary>
+    /// Style to apply to the img/svg element
+    /// </summary>
+    [Parameter]
+    public string Style { get; set; } = "";
+    /// <summary>
+    /// Class to apply to the img/svg element
+    /// </summary>
+    [Parameter]
+    public string Class { get; set; } = "";
+    /// <summary>
+    /// If true (default) a UriRelativeUrl data text URL will automatically be updated when NavigationManager.LocationChanged event fires
+    /// </summary>
+    [Parameter]
+    public bool AutoUpdateUriRelativeUrl { get; set; } = true;
+
+    protected override void OnInitialized()
+    {
+        NavigationManager.LocationChanged += NavigationManager_LocationChanged;
+    }
+    public void Dispose()
+    {
+        NavigationManager.LocationChanged -= NavigationManager_LocationChanged;
+    }
+    void NavigationManager_LocationChanged(object? sender, LocationChangedEventArgs locationChangedEventArgs)
+    {
+        if (TextType == DataTextType.UriRelativeUrl && AutoUpdateUriRelativeUrl)
+        {
+            StateHasChanged();
+        }
+    }
+}

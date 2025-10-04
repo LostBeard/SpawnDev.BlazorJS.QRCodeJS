@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36511.14 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpawnDev.BlazorJS.QRCodeJS", "SpawnDev.BlazorJS.QRCodeJS\SpawnDev.BlazorJS.QRCodeJS.csproj", "{770E701D-712B-41E8-A14B-0E03E2742107}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpawnDev.BlazorJS.QRCodeJS.Demo", "SpawnDev.BlazorJS.QRCodeJS.Demo\SpawnDev.BlazorJS.QRCodeJS.Demo.csproj", "{DCB68F44-AE25-451D-AAA3-C585AB3FA3AB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{770E701D-712B-41E8-A14B-0E03E2742107}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{770E701D-712B-41E8-A14B-0E03E2742107}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{770E701D-712B-41E8-A14B-0E03E2742107}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{770E701D-712B-41E8-A14B-0E03E2742107}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DCB68F44-AE25-451D-AAA3-C585AB3FA3AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCB68F44-AE25-451D-AAA3-C585AB3FA3AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCB68F44-AE25-451D-AAA3-C585AB3FA3AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCB68F44-AE25-451D-AAA3-C585AB3FA3AB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C766ABB7-918D-4BEE-BFCD-4909B44960D3}
+	EndGlobalSection
+EndGlobal
