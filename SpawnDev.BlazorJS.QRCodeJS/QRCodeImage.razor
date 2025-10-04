@@ -3,7 +3,7 @@
 @using static SpawnDev.BlazorJS.QRCodeJS.QRCode
 @implements IDisposable;
 
-<img src="@ImageSource" style="@Style" class="@Class" />
+<img title="@FullText" src="@ImageSource" style="@_Style" class="@Class" />
 
 @code {
     [Inject]
@@ -15,6 +15,8 @@
     [Inject]
     QRCodeJSService QRCodeJSService { get; set; } = default!;
 
+    public string FullText => QRCodeJSService.GetText(Text, TextType);
+
     string ImageSource => QRCodeJSService.CreateDataUrl(new QRCodeOptions
     {
         ColorDark = ColorDark,
@@ -24,6 +26,7 @@
         Width = Width,
         Text = Text,
     }, "image/png", TextType);
+    string _Style => ShowLightBorder  ? $"border: {LightBorderSize} solid {ColorLight ?? "#ffffff"};{Style}" : Style;
     /// <summary>
     /// QRCode link data
     /// </summary>
@@ -43,12 +46,12 @@
     /// The dark color to use. Default: #000000
     /// </summary>
     [Parameter]
-    public string? ColorDark { get; set; }
+    public string? ColorDark { get; set; } = "#000000";
     /// <summary>
     /// The light color to use. Default: #ffffff
     /// </summary>
     [Parameter]
-    public string? ColorLight { get; set; }
+    public string? ColorLight { get; set; } = "#ffffff";
     /// <summary>
     /// CorrectLevel. Default: CorrectLevel.H
     /// </summary>
@@ -64,6 +67,16 @@
     /// </summary>
     [Parameter]
     public string Style { get; set; } = "";
+    /// <summary>
+    /// If true, 'border: 0.5rem solid ColorLight;' will be added to the style
+    /// </summary>
+    [Parameter]
+    public bool ShowLightBorder { get; set; } = true;
+    /// <summary>
+    /// The size of the light border (if enabled)
+    /// </summary>
+    [Parameter]
+    public string LightBorderSize{ get; set; } = "0.5rem";
     /// <summary>
     /// Class to apply to the img/svg element
     /// </summary>
