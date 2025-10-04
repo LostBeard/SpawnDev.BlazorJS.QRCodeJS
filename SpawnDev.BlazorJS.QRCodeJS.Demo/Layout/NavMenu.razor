@@ -1,6 +1,6 @@
 ﻿<div class="top-row ps-3 navbar navbar-dark">
     <div class="container-fluid">
-        <a class="navbar-brand" href="">SpawnDev.BlazorJS.QRCodeJS.Demo</a>
+        <a class="navbar-brand" href="">SpawnDev.BlazorJS.QRCodeJS</a>
         <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -25,11 +25,11 @@
             </NavLink>
         </div>
         <div>
-            Base-Uri-relative QRCode<br />
+            <div style="color: black; background-color: #ffffffaa; text-align: center;">Base-Uri-relative QRCode</div>
             <QRCodeImage Text="app_relative/url.jpg" TextType="DataTextType.BaseUriRelativeUrl" />
         </div>
         <div>
-            Uri-relative QRCode<br/>
+            <div style="color: black; background-color: #ffffffaa; text-align: center;">Uri-relative QRCode</div>
             <QRCodeImage Text="page_relative/url.jpg" TextType="DataTextType.UriRelativeUrl" />
         </div>
     </nav>

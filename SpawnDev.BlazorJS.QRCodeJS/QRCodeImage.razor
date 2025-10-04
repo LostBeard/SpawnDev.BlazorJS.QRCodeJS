@@ -3,7 +3,7 @@
 @using static SpawnDev.BlazorJS.QRCodeJS.QRCode
 @implements IDisposable;
 
-<img title="@FullText" src="@ImageSource" style="@_Style" class="@Class" />
+<img title="@FullText" alt="@AltText" src="@ImageSource" style="@_Style" class="@Class" />
 
 @code {
     [Inject]
@@ -16,6 +16,8 @@
     QRCodeJSService QRCodeJSService { get; set; } = default!;
 
     public string FullText => QRCodeJSService.GetText(Text, TextType);
+
+    public string AltText => $"QRCode: {FullText}";
 
     string ImageSource => QRCodeJSService.CreateDataUrl(new QRCodeOptions
     {
