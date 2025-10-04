@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "SpawnDev.BlazorJS.QRCodeJS.Demo",
   "resources": {
-    "hash": "sha256-AwettxUMYQvKZu8mSGxQKJXBlmTO6SjlTriZQqf5OG4=",
+    "hash": "sha256-eiEpYL8EG0I/bMTwE0Z7e7mocReQ1TnOSC7KLX/4Ry8=",
     "jsModuleNative": {
       "dotnet.native.js": "sha256-TDmtXaFvwbeAHAr5TmWHOrhltcs8APSLfkeeT2fNlSo="
     },
@@ -57,8 +57,8 @@
       "System.Text.RegularExpressions.wasm": "sha256-0UheLXr4bl/G2LFLSw7vN+eZl8yr3Whut8YAyRcMxWk=",
       "System.Threading.wasm": "sha256-l1N5mKqZevUN7pZgyKazOGsgCY/8IzY+BCQqre7Ty9c=",
       "System.Private.CoreLib.wasm": "sha256-ghCDki+qeDRH8xqnCFRyrPg4r6bn0pzh7K6hu3jhNf8=",
-      "SpawnDev.BlazorJS.QRCodeJS.wasm": "sha256-R3H1ygvO3iGFSz4fu8l2Rhgyur33E+259jbu3m0fqZY=",
-      "SpawnDev.BlazorJS.QRCodeJS.Demo.wasm": "sha256-3pVTIZzDOENknaWR4XSyAMAgnFso6Uf1+jNdK+yWSro="
+      "SpawnDev.BlazorJS.QRCodeJS.wasm": "sha256-QD48PIFPmOYc/8NPgjCa7KQd0dVTY621f54VZdh0w1U=",
+      "SpawnDev.BlazorJS.QRCodeJS.Demo.wasm": "sha256-hiT97cGIVSC8kK0mkyVzUrP9522AipaT72IpgDKgjDY="
     },
     "libraryInitializers": {
       "SpawnDev.BlazorJS.lib.module.js": "sha256-MSEFzzIHfyaslxH4GvsWrzxOUHz5n4SKxG0AiWpiYV0="
