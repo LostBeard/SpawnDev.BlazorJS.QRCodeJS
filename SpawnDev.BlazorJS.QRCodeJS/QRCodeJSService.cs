@@ -138,8 +138,15 @@ namespace SpawnDev.BlazorJS.QRCodeJS
             switch (textType)
             {
                 case DataTextType.UriRelativeUrl:
-                    var pageUrl = new Uri(new Uri(NavigationManager.Uri).GetLeftPart(UriPartial.Path).TrimEnd('/') + "/");
-                    txt = new Uri(pageUrl, txt).ToString();
+                    if (string.IsNullOrEmpty(txt))
+                    {
+                        txt = NavigationManager.Uri;
+                    }
+                    else
+                    {
+                        var pageUrl = new Uri(new Uri(NavigationManager.Uri).GetLeftPart(UriPartial.Path).TrimEnd('/') + "/");
+                        txt = new Uri(pageUrl, txt).ToString();
+                    }
                     break;
                 case DataTextType.BaseUriRelativeUrl:
                     txt = new Uri(new Uri(NavigationManager.BaseUri), txt).ToString();
